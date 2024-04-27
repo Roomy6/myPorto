@@ -1,27 +1,11 @@
+// Thanks GPT :D
+
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.navbar a');
     const homeButtons = document.querySelectorAll('.home .btn-box a');
     const socialsLink = document.querySelector('.socials-link');
     const socialLinks = document.querySelector('.social-links');
-    var tabLinks = document.getElementsByClassName("tabLinks");
-    var tabContents = document.getElementsByClassName("tabContents");
-
-    function opentab(tabName, event) {
-        for (let tabLink of tabLinks) {
-            tabLink.classList.remove("activeLink");
-        }
-    
-        for (let tabContent of tabContents) {
-            tabContent.classList.remove("activeTab");
-        }
-    
-        const targetTabLink = event.currentTarget;
-        const targetTabContent = document.getElementById(tabName);
-    
-        targetTabContent.classList.add("activeTab");
-        targetTabLink.classList.add("activeLink");
-    }    
 
     // Event listener for opening/closing social links
     socialsLink.addEventListener('click', function(e) {
@@ -57,12 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to scroll to target section with smooth scrolling
     function scrollToTarget(targetSection) {
         const navbarHeight = document.querySelector('.header').offsetHeight; // Get height of navbar
-        const targetOffset = targetSection.offsetTop - navbarHeight; // Calculate offset with navbar height
-        targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start' // Align the top of the target element at the top of the visible area of the scrollable ancestor
+        const targetOffset = targetSection.getBoundingClientRect().top + window.pageYOffset - navbarHeight; // Calculate offset with navbar height
+        window.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth'
         });
     }
+
 
     // Function to update active link in navbar
     function updateActiveNav(activeId) {

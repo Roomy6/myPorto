@@ -1,18 +1,25 @@
+/* Okay. I warned you, it gets ugly. */
+
+
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Kanit', sans-serif;
     background-color: #1c2831; /* Dark background color */
     color: #DDDEE9; /* Light text color */
 }
 
+/* Header */
 .header {
     font-family: 'Jersey 10', sans-serif;
     position: fixed;
@@ -20,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     padding: 15px 10%;
-    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.4));
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.2));
     border-width: 1px;
     display: flex;
     justify-content: space-between;
@@ -52,14 +59,12 @@ body {
     transition: transform 0.5s; /* Added transition for transform */
 }
 
-/* Added separator style */
 .navbar a:not(:last-child)::after {
     content: '|';
     margin-left: 10px;
     color: #95DA37;
 }
 
-/* Added hover animation */
 .navbar a:hover,
 .navbar a.active {
     color: #6F91BD; /* Change color on hover */
@@ -73,12 +78,13 @@ body {
     transition: color 0.5s; /* Added transition for color change */
 }
 
+/* Home Section */
 .home {
     height: calc(100vh - 100px); /* Adjusted height */
     display: flex;
     align-items: center;
     padding: 0 15%;
-    background-image: url('bgImg1.png'); /* Add your image URL here */
+    background-image: url('assets/bgImg1.png'); /* Add your image URL here */
     background-size: cover; /* Fit the entire image within the container */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating */
@@ -95,12 +101,14 @@ body {
     }
 }
 
+/* Home Content */
 .home-content {
     max-width: 500px;
+    position: relative;
 }
 
 .home-content h1 {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 700;
 }
 
@@ -122,6 +130,7 @@ body {
     margin-bottom: 20px; /* Added margin bottom for spacing */
 }
 
+/* Buttons */
 .btn-box {
     display: flex;
     gap: 40px; /* Added spacing between buttons */
@@ -134,7 +143,7 @@ body {
     align-items: center;
     width: 150px; /* Adjusted width */
     height: 50px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.431); /* Semi-transparent black background */
     border: 2px solid #ABB2BF;
     border-radius: 20px;
     font-size: 13px;
@@ -148,7 +157,7 @@ body {
 }
 
 .btn-box a:nth-child(2) {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.431); /* Semi-transparent black background */
     color: #ABB2BF;
 }
 
@@ -157,7 +166,7 @@ body {
 }
 
 .btn-box a:nth-child(2)::before {
-    background-color: #7ac7e1;
+    background-color: #6F91BD;
 }
 
 .btn-box a::before {
@@ -167,7 +176,7 @@ body {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #7ac7e1;
+    background-color: #6F91BD;
     z-index: -1;
     transition: .5s;
 }
@@ -180,6 +189,7 @@ body {
     color: #0D0E1F;
 }
 
+/* Sections */
 .section {
     height: 100vh; /* Each section takes up the full height of the viewport */
     width: 100%; /* Each section takes up the full width */
@@ -200,35 +210,20 @@ body {
 
 .about,
 .contact {
-    padding: 50px 15%; /* Adjusted padding */
-}
+    display: flex;
+    padding: 0 15%;
 
-.about {
     height: 100vh; /* Each section takes up the full height of the viewport */
     width: 100%; /* Each section takes up the full width */
-    position: relative; /* Position each section relatively */
-    display: flex;
+    position: relative;
+    max-width: 60%;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 1; /* Set opacity to 1 for visibility */
-    transition: opacity 0.5s; /* Add transition effect for opacity */
-    margin-bottom: 50px; /* Add margin to create space below the section */
-    scroll-behavior: smooth; /* Smooth scrolling */
-}
+    margin-top: 15%;
 
-.contact {
-    height: 100vh; /* Each section takes up the full height of the viewport */
-    width: 100%; /* Each section takes up the full width */
-    position: relative; /* Position each section relatively */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 1; /* Set opacity to 1 for visibility */
-    transition: opacity 0.5s; /* Add transition effect for opacity */
-    margin-top: 50px; /* Add margin to create space above the section */
-    scroll-behavior: smooth; /* Smooth scrolling */
+    transition: top 0.5s; /* Add transition effect for smooth animation */
 }
 
 .about-col1 {
@@ -239,6 +234,35 @@ body {
     flex-basis: 60%;
 }
 
+.about p span {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.about h1,
+.contact h1 {
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 85px; /* Adjusted font size */
+    color: #7ac7e1;
+    margin-bottom: 10px; /* Added margin bottom for spacing */
+}
+
+.about h3,
+.contact h3 {
+    font-size: 25px; /* Adjusted font size */
+    font-weight: 700;
+    color: #95DA37;
+    margin-bottom: 10px; /* Added margin bottom for spacing */
+}
+
+.about p,
+.contact p {
+    font-size: 16px;
+    color: #ABB2BF;
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+}
+
+/* Tabs */
 .tabTitles {
     display: flex;
     margin: 20px 0 40px;
@@ -246,7 +270,7 @@ body {
 
 .tabLinks {
     margin-right: 20px;
-    font-size: 530px;
+    font-size: 20px !important;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -256,15 +280,23 @@ body {
     content: '';
     width: 0;
     height: 3px;
-    background: #6F91BD;
+    background: #0000ff;
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: -3px;
     transition: .5s;
 }
 
+.tabLinks:hover {
+    background-color: #6F91BD;
+    color: #1c2831;
+    border-radius: 10px;
+    transition: .3s;
+}
+
 .tabLinks.activeLink::after {
-    width: 50%;
+    background-color: #7ac7e1;
+    width: 100%;
 }
 
 .tabContents ul li {
@@ -274,7 +306,7 @@ body {
 
 .tabContents ul li span {
     color: #95DA37;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .tabContents {
@@ -285,28 +317,31 @@ body {
     display: block;
 }
 
-.about h1,
-.contact h1 {
-    font-family: 'Jersey 10', sans-serif;
-    font-size: 60px; /* Adjusted font size */
-    font-weight: 200;
-    color: #7ac7e1;
-    margin-bottom: 20px; /* Added margin bottom for spacing */
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align the items horizontally */
 }
 
-.about p,
-.contact p {
-    font-size: 18px; /* Adjusted font size */
-    color: #ABB2BF;
-    margin-bottom: 20px; /* Added margin bottom for spacing */
-    max-width: 500px;
+.image-container > div {
+    text-align: center; /* Center align the text */
+    margin-right: 20px; /* Adjust the spacing between the image and text */
 }
 
-.about p span {
-    color: #ffffff;
-    font-weight: 500;
+.image-container img {
+    max-width: 100%; /* Adjust the maximum width of the images */
+    margin-bottom: 10px; /* Add some spacing between the images and text */
+    border-radius: 15px;
 }
 
+.image-container2 img {
+    max-width: 35%; /* Adjust the maximum width of the images */
+    margin-bottom: 20px; /* Add some spacing between the images and text */
+    border-radius: 5px;
+}
+
+
+/* Social Links */
 .social-links {
     display: none; /* Initially hide the social links */
     position: absolute;
@@ -325,10 +360,6 @@ body {
 .social-links.show {
     display: block; /* Show the social links when the "show" class is applied */
     transform: translate(-50%, 0); /* Move the menu to its final position */
-}
-
-.home-content {
-    position: relative; /* Add relative positioning to the home content */
 }
 
 .social-link {

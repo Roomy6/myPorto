@@ -1,112 +1,164 @@
+<!-- WARNING!!!!!!!!!! -->
+<!-- THIS "CODE" GETS VERY BAD xD (Dont look in the CSS, trust me.) -->
+<!-- This is my second time writing html -->
+
+<!-- also why tf is the way to comment stuff. i dont like it. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antoni's Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/e39971a75a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e39971a75a.js" crossorigin="anonymous"></script> <!-- Icons -->
 </head>
-<body>
-    <header class="header">
-        <a href="#" class="logo">Antoni</a>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Antoni.</a> <!-- :O thats me! -->
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-    </header>
-
-    <!-- HOME -->
-
-    <section id="home" class="home">
-        <div class="bg-image"></div>
-        <div class="home-content">
-            <h1>Hey, I'm <span>Antoni</span></h1>
-            <h3>Electronics, Computers and Radios.</h3>
-            <p>I'm deeply passionate about electronics, love tinkering with computers, and enjoy playing with radios. My mission is to dive headfirst into the world of technology, gaining valuable experience and knowledge along the way.</p>
-            <div class="btn-box">
+            <nav class="navbar">
+                <a href="#home">Home</a>
                 <a href="#about">About Me</a>
-                <a href="javascript:void(0)" class="socials-link">Socials</a>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/roomy6" class="social-link">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="github-link">GitHub</span>
-                </a>
-                
-                <a href="javascript:void(0)" class="social-link">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span class="linkedin-link">LinkedIn</span>
-                </a>
-                
-                <a href="https://www.youtube.com/channel/UCWzyX6Rl_e81by4U4CnjfmQ" class="social-link">
-                    <i class="fa-brands fa-youtube"></i>
-                    <span class="youtube-link">YouTube</span>
-                </a>                
-            </div>
-        </div>
-    </section>
+                <a href="#contact">Contact</a>
+            </nav>
 
-    <!-- ABOUT -->
+        </header>
 
-    <!--<section id="about" class="about">
-        <h1>About Me</h1>
-        <p>Hey there! I'm Antoni, a teenager with a <span>passion for electronics, computers, and programming</span>. Fluent in both English and Polish, I've always had a knack for understanding how things work. <span>From a young age</span>, I've been immersed in the world of technology, constantly <span>tinkering with electronics</span> and bringing my own projects to life. Join me on this journey of discovery and innovation as I continue to learn, explore, and create in the ever-evolving landscape of technology.</p>
-    </section> -->
+        <!-- HOME -->
 
-    <section <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-2">
-                    <h1>About Me</h1>
-                    <p>Hey there! I'm Antoni, a teenager with a <span>passion for electronics, computers, and programming</span>. Fluent in both English and Polish, I've always had a knack for understanding how things work. <span>From a young age</span>, I've been immersed in the world of technology, constantly <span>tinkering with electronics</span> and bringing my own projects to life. Join me on this journey of discovery and innovation as I continue to learn, explore, and create in the ever-evolving landscape of technology.</p>
+        <section id="home" class="home">
+            <div class="bg-image"></div>
+            <div class="home-content">
+                <h1>Hey, I'm <span>Antoni</span></h1>
+                <h3>Electronics, Computers and Radios.</h3>
+                <p>I'm deeply passionate about electronics, love tinkering with computers, and enjoy playing with radios. My mission is to dive headfirst into the world of technology, gaining valuable experience and knowledge along the way.</p>
+                <div class="btn-box">
+                    <a href="#about">About Me</a>
+                    <a href="javascript:void(0)" class="socials-link">Socials</a> <!-- Stop if from snapping to home. -->
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/roomy6" class="social-link">
+                        <i class="fa-brands fa-github"></i>
+                        <span class="github-link">GitHub</span>
+                    </a>
                     
-                    <div class="tabTitles">
-                        <p class="tabLinks activeLink" onclick="opentab('skills', event)">Skills</p>
-                        <p class="tabLinks" onclick="opentab('experience', event)">Experience</p>
-                        <p class="tabLinks" onclick="opentab('education', event)">Education</p>
-                    </div>                    
-
-                    <div class="tabContents activeTab" id="skills">
-                        <ul>
-                            <li><span>Skill 1</span><br>Consuming Expired Crayons</li>
-                            <li><span>Skill 2</span><br>Consuming New Crayons</li>
-                            <li><span>Skill 3</span><br>Consuming Crayon Factories</li>
-                        </ul>
-                    </div>
-
-                    <div class="tabContents" id="experience">
-                        <ul>
-                            <li><span>Skill 1</span><br>Consuming Expired Crayons</li>
-                            <li><span>Skill 2</span><br>Consuming New Crayons</li>
-                            <li><span>Skill 3</span><br>Consuming Crayon Factories</li>
-                        </ul>
-                    </div>
-
-                    <div class="tabContents" id="education">
-                        <ul>
-                            <li><span>Skill 1</span><br>Consuming Expired Crayons</li>
-                            <li><span>Skill 2</span><br>Consuming New Crayons</li>
-                            <li><span>Skill 3</span><br>Consuming Crayon Factories</li>
-                        </ul>
-                    </div>
-
+                    <a href="javascript:void(0)" class="social-link"> <!-- dont have one. yet. -->
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span class="linkedin-link">LinkedIn</span>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/channel/UCWzyX6Rl_e81by4U4CnjfmQ" class="social-link">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span class="youtube-link">YouTube</span>
+                    </a>                
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT -->
+        <!-- ABOUT -->
 
-    <section id="contact" class="contact">
-        <h1>Contact me here.</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt sint possimus alias sit facere cumque hic in! Quos, quibusdam facilis! Sed ducimus voluptates nihil aliquam quae voluptatem et! Fuga, delectus!</p>
-    </section>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-2">
+                        <h1>About Me</h1>
+                        <p>Hey there! I'm Antoni, with a <span>passion for electronics, computers, and programming</span>. Fluent in both English and Polish, I've always had a interest for understanding how things work. <span>From a young age</span>, I've been immersed in the world of technology, constantly <span>tinkering with electronics</span> and bringing my own projects to life. Join me on this journey of discovery and innovation as I continue to learn, explore, and create in the ever-evolving landscape of technology.</p>
+                        
+                        <div class="tabTitles">
+                            <p class="tabLinks activeLink" onclick="opentab('myWork', event)">My Work</p>
+                            <p class="tabLinks" onclick="opentab('tab2', event)">tab2</p>
+                            <p class="tabLinks" onclick="opentab('tab3', event)">tab3</p>
+                        </div>                    
 
-    <script src="script.js"></script> 
-</body>
+                        <div class="tabContents activeTab" id="myWork">
+                            <ul>
+                                <li>
+                                    <span><h3>Steganography</h3></span>
+                                    <br>
+                                    <p>A Python project that encodes data in to images by manipulating RGB colour pixel values</p>
+                                    <p>This can be used to encode hidden text, images, audio files, executables and every file possible.</p>
+
+                                    <div class="image-container">
+                                        <div>
+                                            <img src="assets/originalTree.jpg" alt="Original image">
+                                            <br>
+                                            <h2>Original</h2>
+                                        </div>
+                                        <div>
+                                            <img src="assets/encodedTree.png" alt="Encoded image">
+                                            <br>
+                                            <h2>Encoded</h2>
+                                        </div>
+                                    </div>
+
+                                    Dear future me
+                                    <br>
+                                    Fix this weird push up thing it's doing :D
+
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tabContents" id="tab2">
+                            <ul>
+                                <li>
+                                    <span><h3>tab2</h3></span>
+                                    <br>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aliquam, laudantium at ea amet fugiat odit porro neque atque distinctio magnam, deserunt ratione natus enim quos? Vitae quis corporis atque!</p></li>
+                            </ul>
+                        </div>
+
+                        <div class="tabContents" id="tab3">
+                            <ul>
+                                <li>
+                                    <span><h3>tab3</h3></span>
+                                    <br>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore veritatis tempora ipsa excepturi culpa nisi sequi, quam harum reiciendis dolores ratione enim officia unde, iusto possimus saepe rem necessitatibus earum!</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-col">
+                        <h1>Contact me here.</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, suscipit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, dolores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>    
+
+        <!-- Stupid tab links dont work unless i define the script here ¯\_(ツ)_/¯ -->
+
+        <script>
+            var tabLinks = document.getElementsByClassName("tabLinks");
+            var tabContents = document.getElementsByClassName("tabContents");
+
+            function opentab(tabName, event) {
+            for (let tabLink of tabLinks) {
+                tabLink.classList.remove("activeLink");
+            }
+        
+            for (let tabContent of tabContents) {
+                tabContent.classList.remove("activeTab");
+            }
+        
+            const targetTabLink = event.currentTarget;
+            const targetTabContent = document.getElementById(tabName);
+        
+            targetTabContent.classList.add("activeTab");
+            targetTabLink.classList.add("activeLink");
+        }
+        </script>
+
+        <script src="script.js"></script> 
+    </body>
 </html>
