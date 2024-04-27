@@ -1,0 +1,108 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111; /* Dark background color */
+    color: #eee; /* Light text color */
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #0D0E1F; /* Dark sidebar color */
+    padding-top: 40px; /* Space for name */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering items horizontally */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
+}
+
+.sidebar h1 {
+    color: #DDDEE9; /* Light text color for name */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Spacing between name and menu */
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #6F91BD; /* Light text color for sidebar links */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px; /* Initial border radius */
+    transition: background-color 0.4s ease, padding 0.4s ease, font-weight 0.4s ease; /* Smooth transition for background color, padding, and font weight */
+}
+
+.sidebar ul li a:hover {
+    background-color: #0D2E3F; /* Darker background color on hover */
+    color: #ABB2BF;
+    border-radius: 25px; /* Increased border radius on hover */
+    padding: 20px; /* Increased padding on hover */
+    font-weight: bold; /* Bold text on hover */
+}
+
+.content {
+    margin-left: 200px; /* Adjusting content position to account for sidebar width */
+    padding: 20px;
+}
+
+/* Styling for content sections */
+.content section {
+    background-color: #222; /* Darker background color for sections */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+    transition: opacity 0.6s ease; /* Smooth transition for opacity */
+    opacity: 0; /* Initially hide sections */
+    transform: translateY(20px); /* Initial translation */
+}
+
+.content section h2 {
+    color: #fff; /* Light text color for section headings */
+    margin-bottom: 10px;
+}
+
+/* Styling for title bar */
+.title-bar {
+    background-color: #ff0000; /* Match sidebar background color */
+    color: #DDDEE9; /* Light text color */
+    padding: 10px;
+    border-radius: 5px; /* Initial border radius */
+    margin-bottom: 20px; /* Spacing from content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+/* Animation for sections */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content section.animated {
+    opacity: 1; /* Fade in sections */
+    transform: translateY(0); /* Slide up sections */
+}

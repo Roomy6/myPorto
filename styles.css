@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #1c2831; /* Dark background color */
+    color: #DDDEE9; /* Light text color */
+}
+
+.header {
+    font-family: 'Jersey 10', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 10%;
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.4));
+    border-width: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 50px;
+    color: #DDDEE9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 25px;
+    color: #DDDEE9;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    position: relative; /* Added position relative */
+    transition: color 0.3s ease;
+    transition: transform 0.5s; /* Added transition for transform */
+}
+
+/* Added separator style */
+.navbar a:not(:last-child)::after {
+    content: '|';
+    margin-left: 10px;
+    color: #95DA37;
+}
+
+/* Added hover animation */
+.navbar a:hover,
+.navbar a.active {
+    color: #6F91BD; /* Change color on hover */
+    font-size: 30px;
+    transform: translateY(-3px); /* Move link up on hover */
+    transition: color 0.5s, font-size .5s, transform .5s; /* Added transition for color, font-size, and transform */
+}
+
+.navbar a:hover::after {
+    color: #DDDEE9; /* Change separator color on hover */
+    transition: color 0.5s; /* Added transition for color change */
+}
+
+.home {
+    height: calc(100vh - 100px); /* Adjusted height */
+    display: flex;
+    align-items: center;
+    padding: 0 15%;
+    background-image: url('bgImg1.png'); /* Add your image URL here */
+    background-size: cover; /* Fit the entire image within the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeIn 3s forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+    }
+}
+
+.home-content {
+    max-width: 500px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.home-content h1 span {
+    color: #C43F35;
+    font-weight: 300;
+}
+
+.home-content h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #7ac7e1;
+    margin-bottom: 10px; /* Added margin bottom for spacing */
+}
+
+.home-content p {
+    font-size: 16px;
+    color: #ABB2BF;
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+}
+
+.btn-box {
+    display: flex;
+    gap: 40px; /* Added spacing between buttons */
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Adjusted width */
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #ABB2BF;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #ABB2BF;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:nth-child(2) {
+    background-color: transparent;
+    color: #ABB2BF;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #0D0E1F;
+}
+
+.btn-box a:nth-child(2)::before {
+    background-color: #7ac7e1;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #7ac7e1;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.btn-box a:hover {
+    color: #0D0E1F;
+}
+
+.section {
+    height: 100vh; /* Each section takes up the full height of the viewport */
+    width: 100%; /* Each section takes up the full width */
+    position: absolute; /* Position each section absolutely */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hide all sections */
+    transition: opacity 0.5s; /* Add transition effect for opacity */
+}
+
+.section.active {
+    opacity: 1; /* Show active section */
+}
+
+.about,
+.contact {
+    padding: 50px 15%; /* Adjusted padding */
+}
+
+.about {
+    height: 100vh; /* Each section takes up the full height of the viewport */
+    width: 100%; /* Each section takes up the full width */
+    position: relative; /* Position each section relatively */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; /* Set opacity to 1 for visibility */
+    transition: opacity 0.5s; /* Add transition effect for opacity */
+    margin-bottom: 50px; /* Add margin to create space below the section */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.contact {
+    height: 100vh; /* Each section takes up the full height of the viewport */
+    width: 100%; /* Each section takes up the full width */
+    position: relative; /* Position each section relatively */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; /* Set opacity to 1 for visibility */
+    transition: opacity 0.5s; /* Add transition effect for opacity */
+    margin-top: 50px; /* Add margin to create space above the section */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.about-col1 {
+    flex-basis: 35%;
+}
+
+.about-col2{
+    flex-basis: 60%;
+}
+
+.tabTitles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tabLinks {
+    margin-right: 20px;
+    font-size: 530px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tabLinks::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #6F91BD;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: .5s;
+}
+
+.tabLinks.activeLink::after {
+    width: 50%;
+}
+
+.tabContents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tabContents ul li span {
+    color: #95DA37;
+    font-size: 17px;
+}
+
+.tabContents {
+    display: none;
+}
+
+.tabContents.activeTab {
+    display: block;
+}
+
+.about h1,
+.contact h1 {
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 60px; /* Adjusted font size */
+    font-weight: 200;
+    color: #7ac7e1;
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+}
+
+.about p,
+.contact p {
+    font-size: 18px; /* Adjusted font size */
+    color: #ABB2BF;
+    margin-bottom: 20px; /* Added margin bottom for spacing */
+    max-width: 500px;
+}
+
+.about p span {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.social-links {
+    display: none; /* Initially hide the social links */
+    position: absolute;
+    top: calc(100% + 10px); /* Position it just below the socials link with some spacing */
+    left: 50%;
+    transform: translate(-50%, -10px);
+    width: auto;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.431); /* Semi-transparent black background */
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+    transition: opacity 0.5s ease; /* Add transition for opacity */
+    z-index: 1; /* Ensure the links are above other content */
+}
+
+.social-links.show {
+    display: block; /* Show the social links when the "show" class is applied */
+    transform: translate(-50%, 0); /* Move the menu to its final position */
+}
+
+.home-content {
+    position: relative; /* Add relative positioning to the home content */
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    color: #DDDEE9;
+    text-decoration: none;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for background color and transform */
+}
+
+.social-link:hover {
+    background-color: #6F91BD; /* Change background color on hover */
+    transform: scale(1.05); /* Scale up the link on hover */
+}
+
+.social-link i {
+    width: 25px;
+    height: auto;
+    margin-right: 2px;
+}
