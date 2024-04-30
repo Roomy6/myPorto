@@ -1,4 +1,5 @@
 /* Okay. I warned you, it gets ugly. */
+/* GPT used to clean/comment/arrange CSS */
 
 
 /* Fonts */
@@ -212,18 +213,26 @@ body {
 .contact {
     display: flex;
     padding: 0 15%;
-
-    height: 100vh; /* Each section takes up the full height of the viewport */
-    width: 100%; /* Each section takes up the full width */
+    height: auto; /* Set height to auto to accommodate variable content */
+    width: 100%;
     position: relative;
     max-width: 60%;
-
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 15%;
-
+    margin-bottom: 15%; /* Add margin at the bottom to create space for the contact section */
     transition: top 0.5s; /* Add transition effect for smooth animation */
+}
+
+.contact {
+    top: 100%; /* Push the contact section off the screen initially */
+}
+
+/* Adjust the transition for the contact section */
+.contact.active {
+    top: 0; /* Bring the active contact section onto the screen */
+    transition: top 0.5s, opacity 0.5s; /* Add transition effect for smooth animation */
 }
 
 .about-col1 {
@@ -382,4 +391,45 @@ body {
     width: 25px;
     height: auto;
     margin-right: 2px;
+}
+
+.slideImage-container {
+    user-select: none; /* Prevent selection of text */
+    position: relative;
+    height: 361px;
+    width: 520px;
+    border-radius: 25px;
+}
+
+.img-comp-img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.img-comp-img img {
+    display: block;
+    border-radius: 25px;
+}
+
+.img-comp-slider {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    width: 40px; /* Adjust slider width as needed */
+    height: 40px; /* Adjust slider height as needed */
+    background-color: #007bff; /* Change background color as needed */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Ensure it's a circle */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.img-comp-slider:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+.img-comp-slider:active {
+    transform: scale(0.9); /* Add slight scale effect on click */
 }
